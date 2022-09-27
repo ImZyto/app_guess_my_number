@@ -5,12 +5,13 @@ const START_SCORE = 20;
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 //console.log(secretNumber);
 let score = START_SCORE;
+let highscore = 0;
 
 document.querySelector('.again').addEventListener('click', function () {
+  score = START_SCORE;
   document.querySelector('body').style.backgroundColor = '#222';
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   //console.log(secretNumber);
-  score = START_SCORE;
   document.querySelector('.score').textContent = score;
   document.querySelector('.guess').value = '';
   document.querySelector('.number').style.width = '15rem';
@@ -34,6 +35,11 @@ document.querySelector('.check').addEventListener('click', function () {
 
     document.querySelector('.number').style.width = '30rem';
     document.querySelector('.number').textContent = secretNumber;
+
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+    }
 
     // When guess is too high
   } else if (guess > secretNumber) {
