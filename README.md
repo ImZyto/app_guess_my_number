@@ -1,4 +1,4 @@
-#Guess my number
+# Guess my number
 
 1️⃣ project showing my basic skills with use of JavaScript, HTML&CSS.
 
